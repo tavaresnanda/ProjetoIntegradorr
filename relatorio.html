@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Relatório de Doações</title>
+
+<style>
+    
+    body{ 
+        font-family: Arial; 
+        background:#f2f2f2; 
+        margin:0; 
+        padding:0; 
+    }
+
+    header { 
+        background:#2F55A4; 
+        color:white; 
+        text-align:center; 
+        padding:25px; 
+    }
+
+    header h1 { 
+        margin:0; 
+        font-size:28px; 
+    }
+
+    header p { 
+        margin:5px 0 0; 
+        font-size:16px; 
+    }
+
+    main{ 
+        max-width:900px; 
+        margin:40px auto; 
+        display:flex; 
+        flex-wrap:wrap; 
+        justify-content:center; gap:20px; 
+    }
+
+    .card{ background:white; 
+        padding:40px; 
+        border-radius:10px; 
+        box-shadow:0 0 10px rgba(0,0,0,0.1); 
+        text-align:center; width:200px; 
+    }
+
+    .card h2{ 
+        color:#2F55A4; 
+        margin-bottom:15px; 
+    }
+
+    .card .numero{ 
+        font-size:50px; 
+        color:#f1c056; 
+        font-weight:bold; 
+    }
+
+    button{ padding:10px 20px; 
+        border:none; 
+        background:#1f3f78; 
+        color:white; 
+        border-radius:6px; 
+        cursor:pointer; 
+        margin-top:20px; 
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Relatório de Doações e Voluntários</h1>
+    <p>Visualize quantas doações e voluntários foram registrados</p>
+</header>
+
+<main>
+    <div class="card">
+        <h2>Alimentos</h2>
+        <div class="numero" id="alimentos">0</div>
+    </div>
+    <div class="card">
+        <h2>Roupas</h2>
+        <div class="numero" id="roupas">0</div>
+    </div>
+    <div class="card">
+        <h2>Móveis</h2>
+        <div class="numero" id="moveis">0</div>
+    </div>
+    <div class="card">
+        <h2>Voluntários</h2>
+        <div class="numero" id="voluntarios">0</div>
+    </div>
+</main>
+
+<div style="text-align:center; margin-bottom:40px;">
+    <button onclick="resetar()">Zerar Contadores</button>
+</div>
+
+<script>
+    function atualizar(){
+        const tipos = ['alimentos','roupas','moveis','voluntarios'];
+        tipos.forEach(tipo => {
+            let total = localStorage.getItem(tipo) || 0;
+            document.getElementById(tipo).innerText = total;
+        });
+    }
+
+    function resetar(){
+        const tipos = ['alimentos','roupas','moveis','voluntarios'];
+        tipos.forEach(tipo => localStorage.setItem(tipo, 0));
+        atualizar();
+    }
+
+    atualizar();
+</script>
+
+</body>
+</html>
