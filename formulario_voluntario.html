@@ -5,65 +5,96 @@
     <title>Formulário de Voluntariado</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8f9fc, #eef1f7);
             margin: 0;
-        }
-
-        header {
-            background: #2F55A4;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-
-        main {
-            max-width: 650px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #2F55A4;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
             color: #333;
         }
 
-        input, textarea, button {
+        /* HEADER MODERNO */
+        header {
+            background: linear-gradient(135deg, #2F55A4, #759fd6);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        /* CARD */
+        main {
+            max-width: 700px;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #f79d3c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* CAMPOS */
+        label {
+            display: block;
+            margin-top: 18px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input, textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-top: 6px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
+            border-radius: 8px;
+            border: 1px solid #ddd;
             box-sizing: border-box;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #f79d3c;
+            outline: none;
+            box-shadow: 0 0 8px rgba(247,157,60,0.3);
         }
 
         textarea {
             resize: vertical;
         }
 
+        /* BOTÃO MODERNO */
         button {
-            background: #f1c056;
+            width: 100%;
+            padding: 14px;
+            margin-top: 30px;
+            background: linear-gradient(135deg, #f7b267, #f79d3c);
             color: white;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 600;
             border: none;
-            margin-top: 25px;
+            border-radius: 30px;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         button:hover {
-            background: #1f3f78;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
     </style>
 </head>
